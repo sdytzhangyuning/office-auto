@@ -14,7 +14,6 @@ public class LoginAction extends ActionSupport {
     private String yzm;
     private String result = "";
 
-    // 登录
     public String login() {
         String autoyzh = (String) ActionContext.getContext().getSession().get("yzm");
         Map<String, Object> session = ActionContext.getContext().getSession();

@@ -30,13 +30,11 @@ public class salaryAction extends ActionSupport {
     private String result;
     private String departId = "";
 
-    // 计算总页数
     public void getPage(String hql) {
         totalMessage = baseBiz.findList(hql).size();
         maxPage = (totalMessage - 1) / size + 1;
     }
 
-    // 生成工资页面跳转
     public String salUI() {
         Date now = new Date();
         int year = now.getYear() + 1900;
@@ -55,7 +53,6 @@ public class salaryAction extends ActionSupport {
         return "salUI";
     }
 
-    // 查询当月所有工资
     public String findMonthPageList() {
         if (!"".equals(departId)) {
             hql += " and s.employeeinfo.departmentinfo.departId = " + departId;
@@ -73,13 +70,11 @@ public class salaryAction extends ActionSupport {
         return "findMonthPageList";
     }
 
-    // 添加工资单UI跳转
     public String addSalUI() {
 
         return "addSalUI";
     }
 
-    // 添加工资单
     public String addSal() {
         Boolean flag = baseBiz.add(salary);
         if (flag) {
@@ -88,7 +83,6 @@ public class salaryAction extends ActionSupport {
         return "Error";
     }
 
-    // 删除工资单
     public String dellSal() {
         Boolean flag = baseBiz.dell(new Salaryinfo(), salId);
         if (flag) {
@@ -97,13 +91,11 @@ public class salaryAction extends ActionSupport {
         return "Error";
     }
 
-    // 修改工资单UI跳转
     public String updateSalUI() {
         salary = baseBiz.getById(new Salaryinfo(), salId);
         return "updateSalUI";
     }
 
-    // 修改工资单
     public String updateSal() {
         salary = baseBiz.getById(new Salaryinfo(), salId);
         salary.setSstate(1);
@@ -114,7 +106,6 @@ public class salaryAction extends ActionSupport {
         return "Error";
     }
 
-    // 通过选择条件查找数据
     public String findSalList() {
         user = (Userinfo) ActionContext.getContext().getSession().get("loginuser");
         hql = hql + " and s.employeeinfo.empId = " + user.getEmpId();
@@ -128,7 +119,6 @@ public class salaryAction extends ActionSupport {
         return "findSalList";
     }
 
-    // 查询所有工资单
     public String findSalPageList() {
         getPage(hql);
         if (0 == currenPage) {
@@ -215,7 +205,7 @@ public class salaryAction extends ActionSupport {
     public Map<String, Object> getDepartList() {
         List<Departmentinfo> list = departBiz.findList("from Departmentinfo");
         departList = new HashMap<String, Object>();
-        departList.put("", "全部");
+        departList.put("", "all");
         for (Departmentinfo d : list) {
             departList.put(d.getDepartId(), d.getDepartName());
         }

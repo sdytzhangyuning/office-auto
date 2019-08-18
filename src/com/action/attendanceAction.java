@@ -38,7 +38,6 @@ public class attendanceAction extends ActionSupport {
     private Date opDate;
     private String result;
 
-    // 添加考勤UI跳转
     public String addAtdUI() {
         getPage(hql);
         System.out.println(hql);
@@ -46,7 +45,6 @@ public class attendanceAction extends ActionSupport {
         return "addAtdUI";
     }
 
-    // 添加考勤
     public String addAtd() {
         attendance.setAttendTime(new Date());
         attendance.setAttendState(1);
@@ -57,7 +55,6 @@ public class attendanceAction extends ActionSupport {
         return "Error";
     }
 
-    // 删除考勤
     public String dellAtd() {
         Boolean flag = baseBiz.dell(new Attendanceinfo(), atdId);
         if (flag) {
@@ -66,13 +63,11 @@ public class attendanceAction extends ActionSupport {
         return "Error";
     }
 
-    // 修改考勤UI跳转
     public String updateAtdUI() {
         attendance = baseBiz.getById(new Attendanceinfo(), atdId);
         return "updateAtdUI";
     }
 
-    // 修改考勤
     public String updateAtd() {
         attendance = baseBiz.getById(new Attendanceinfo(), atdId);
         attendance.setAttendState(1);
@@ -83,14 +78,12 @@ public class attendanceAction extends ActionSupport {
         return "Error";
     }
 
-    // 查询个人所有考勤
     public String findAtdPageList() {
         getPage(hql);
         attendances = baseBiz.findPageList(hql, index, size);
         return "findAtdPageList";
     }
 
-    // 查询所有考勤
     public String findAtdList() {
         getPage(hql);
         System.out.println(hql);
@@ -98,7 +91,6 @@ public class attendanceAction extends ActionSupport {
         return "findAtdList";
     }
 
-    // 条件查询所有考勤
     public String findConditionAtdList() {
         if (!"".equals(departId)) {
             hql += " and a.employeeinfo.departmentinfo.departId = " + departId;
@@ -118,7 +110,6 @@ public class attendanceAction extends ActionSupport {
         return "findConditionAtdList";
     }
 
-    // 查询今天考勤
     public String findTodayAtdUI() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String date = sdf.format(new Date());
@@ -131,7 +122,6 @@ public class attendanceAction extends ActionSupport {
         return "findTodayAtdUI";
     }
 
-    // 根据条件查找今天考勤
     public String findTodayAtd() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String date = sdf.format(new Date());
@@ -150,7 +140,6 @@ public class attendanceAction extends ActionSupport {
         return "findTodayAtd";
     }
 
-    // 根据条件查询个人考勤
     public String getByTimePageList() {
 
         Userinfo user = (Userinfo) ActionContext.getContext().getSession().get("loginuser");
@@ -174,7 +163,6 @@ public class attendanceAction extends ActionSupport {
         return "ByTimePageList";
     }
 
-    // 签到opUI
     public String dayAdtOpUI() {
         Date date = new Date();
         if (opDate.after(date)) {
@@ -184,17 +172,15 @@ public class attendanceAction extends ActionSupport {
         return "dayAdtOpUIOK";
     }
 
-    // 设置选择条件
     public Map getStateList() {
         Map map = new HashMap();
-        map.put(-1, "全部");
-        map.put(0, "缺勤");
-        map.put(1, "在职");
-        map.put(2, "请假");
+        map.put(-1, "all);
+        map.put(0, "no sign");
+        map.put(1, "on");
+        map.put(2, "sign");
         return map;
     }
 
-    // 计算总页数
     public void getPage(String hql) {
         totalMessage = baseBiz.findList(hql).size();
         PageCount = (totalMessage - 1) / size + 1;

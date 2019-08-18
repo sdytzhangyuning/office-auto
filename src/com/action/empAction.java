@@ -40,24 +40,20 @@ public class empAction extends ActionSupport {
     private File upload;
     private String uploadFileName;
 
-    // 计算总页数
     public void getPage(String hql) {
         totalMessage = baseBiz.findList(hql).size();
         PageCount = (totalMessage - 1) / size + 1;
     }
 
-    // 添加职员UI跳转
     public String addEmpUI() {
 
         return "addEmpUI";
     }
 
-    // 查询职工UI跳转
     public String searchEmp() {
         return "searchEmp";
     }
 
-    // 添加职员信息
     public String addEmp() {
         FileInputStream fis = null;
         FileOutputStream fos = null;
@@ -84,13 +80,11 @@ public class empAction extends ActionSupport {
         return "Error";
     }
 
-    // 职员详细信息
     public String empDetail() {
         emp = baseBiz.getById(new Employeeinfo(), empId);
         return "empDetail";
     }
 
-    // 删除职员信息
     public String dellEmp() {
         Boolean flag = baseBiz.dell(new Employeeinfo(), empId);
         if (flag) {
@@ -99,20 +93,17 @@ public class empAction extends ActionSupport {
         return "Error";
     }
 
-    // 职员基本信息详情
     public String empDet() {
         Userinfo user = (Userinfo) ActionContext.getContext().getSession().get("loginuser");
         emp = baseBiz.getById(new Employeeinfo(), user.getEmpId());
         return "empDet";
     }
 
-    // 修改职员UI跳转
     public String updateEmpUI() {
         emp = baseBiz.getById(new Employeeinfo(), empId);
         return "updateEmpUI";
     }
 
-    // 修改职员信息
     public String updateEmp() {
         FileInputStream fis = null;
         FileOutputStream fos = null;
@@ -137,7 +128,6 @@ public class empAction extends ActionSupport {
         return "Error";
     }
 
-    // 查询所有职员
     public String findEmpPageList() {
         String hql = "from Employeeinfo";
         if (-1 == orderByAge) {
@@ -163,7 +153,6 @@ public class empAction extends ActionSupport {
         return "findEmpPageList";
     }
 
-    // 条件查询职工
     public String searchEmpList() {
         String hql = "from Employeeinfo e where 1=1";
         if (!"".equals(empId)) {
@@ -242,7 +231,7 @@ public class empAction extends ActionSupport {
     public Map<String, Object> getDepartList() {
         List<Departmentinfo> list = departBiz.findList("from Departmentinfo");
         departList = new HashMap<String, Object>();
-        departList.put("", "全部");
+        departList.put("", "all");
         for (Departmentinfo d : list) {
             departList.put(d.getDepartId(), d.getDepartName());
         }
@@ -263,8 +252,8 @@ public class empAction extends ActionSupport {
 
     public Map<String, Object> getGenderList() {
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("男", "男");
-        map.put("女", "女");
+        map.put("m", "m");
+        map.put("f", "f");
         return map;
     }
 

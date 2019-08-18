@@ -18,19 +18,16 @@ public class departAction extends ActionSupport {
     private int maxPageNo;
     private int totalMessage;
 
-    // 计算总页数
     public void getPage(String hql) {
         totalMessage = baseBiz.findList(hql).size();
         maxPageNo = (totalMessage - 1) / size + 1;
     }
 
-    // 添加部门UI跳转
     public String addDepUI() {
 
         return "addDepUI";
     }
 
-    // 添加部门
     public String addDep() {
         Boolean flag = baseBiz.add(depart);
         if (flag) {
@@ -39,7 +36,6 @@ public class departAction extends ActionSupport {
         return "Error";
     }
 
-    // 删除部门
     public String dellDep() {
         Boolean flag = baseBiz.dell(new Departmentinfo(), depId);
         if (flag) {
@@ -48,13 +44,11 @@ public class departAction extends ActionSupport {
         return "Error";
     }
 
-    // 修改部门UI跳转
     public String updateDepUI() {
         depart = baseBiz.getById(new Departmentinfo(), depId);
         return "updateDepUI";
     }
 
-    // 修改部门
     public String updateDep() {
         Boolean flag = baseBiz.update(depart);
         if (flag) {
@@ -63,7 +57,6 @@ public class departAction extends ActionSupport {
         return "Error";
     }
 
-    // 查询部门信息
     public String findDepPageList() {
         getPage(hql);
         if (0 == currenPage) {

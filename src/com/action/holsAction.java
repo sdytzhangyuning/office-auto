@@ -30,19 +30,16 @@ public class holsAction extends ActionSupport {
     private int holsState = -1;
     private String departId = "";
 
-    // 计算总页数
     public void getPage(String hql) {
         totalMessage = baseBiz.findList(hql).size();
         maxPage = (totalMessage - 1) / size + 1;
     }
 
-    // 添加请假条UI跳转
     public String addHolsUI() {
 
         return "addHolsUI";
     }
 
-    // 添加请假条
     public String addHols() {
         Userinfo user = (Userinfo) ActionContext.getContext().getSession().get("loginuser");
         Employeeinfo emp = empBiz.getById(new Employeeinfo(), user.getEmpId());
@@ -59,7 +56,6 @@ public class holsAction extends ActionSupport {
         return "Error";
     }
 
-    // 删除请假条
     public String dellHols() {
         Boolean flag = baseBiz.dell(new Holsinfo(), holsId);
         if (flag) {
@@ -68,13 +64,11 @@ public class holsAction extends ActionSupport {
         return "Error";
     }
 
-    // 修改请假条UI跳转
     public String updateHolsUI() {
         hols = baseBiz.getById(new Holsinfo(), holsId);
         return "updateHolsUI";
     }
 
-    // 修改请假条
     public String updateHols() {
         hols = baseBiz.getById(new Holsinfo(), holsId);
         hols.setHolsState(holsState);
@@ -85,7 +79,6 @@ public class holsAction extends ActionSupport {
         return "Error";
     }
 
-    // 管理请假条
     public String adminHols() {
         if (!"".equals(departId)) {
             hql += " and h.employeeinfo.departmentinfo.departId = " + departId;
@@ -99,7 +92,6 @@ public class holsAction extends ActionSupport {
         return "adminHols";
     }
 
-    // 查询所有请假条
     public String findHolsPageList() {
         Userinfo user = (Userinfo) ActionContext.getContext().getSession().get("loginuser");
         hql += " and h.employeeinfo.empId = " + user.getEmpId();
@@ -167,7 +159,7 @@ public class holsAction extends ActionSupport {
     public Map<String, Object> getDepartList() {
         List<Departmentinfo> list = departBiz.findList("from Departmentinfo");
         departList = new HashMap<String, Object>();
-        departList.put("", "全部");
+        departList.put("", "all");
         for (Departmentinfo d : list) {
             departList.put(d.getDepartId(), d.getDepartName());
         }
@@ -176,10 +168,10 @@ public class holsAction extends ActionSupport {
 
     public Map getStateList() {
         Map map = new HashMap();
-        map.put(0, "未处理");
-        map.put(1, "同意");
-        map.put(2, "撤消");
-        map.put(3, "拒绝");
+        map.put(0, "no pro");
+        map.put(1, "approval");
+        map.put(2, "recall");
+        map.put(3, "refuse");
         return map;
 
     }

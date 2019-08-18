@@ -27,25 +27,21 @@ public class extraworkAction extends ActionSupport {
     private int maxPage;
     private int totalMessage;
 
-    // 计算总页数
     public void getPage(String hql) {
         totalMessage = baseBiz.findList(hql).size();
         maxPage = (totalMessage - 1) / size + 1;
     }
 
-    // 加班单详情查询
     public String extDetail() {
         extrawork = baseBiz.getById(new Extrawork(), extId);
         return "extDetail";
     }
 
-    // 添加加班UI
     public String addExtUI() {
 
         return "addExtUI";
     }
 
-    // 添加加班单
     public String addExt() {
         Boolean flag = baseBiz.add(extrawork);
         if (flag) {
@@ -54,7 +50,6 @@ public class extraworkAction extends ActionSupport {
         return "Error";
     }
 
-    // 删除加班单
     public String dellExt() {
         Boolean flag = baseBiz.dell(new Extrawork(), extId);
         if (flag) {
@@ -63,13 +58,11 @@ public class extraworkAction extends ActionSupport {
         return "Error";
     }
 
-    // 修改加班单UI跳转
     public String updateExtUI() {
         extrawork = baseBiz.getById(new Extrawork(), extId);
         return "updateExtUI";
     }
 
-    // 修改加班单
     public String updateExt() {
         Boolean flag = baseBiz.update(extrawork);
         if (flag) {
@@ -78,7 +71,6 @@ public class extraworkAction extends ActionSupport {
         return "Error";
     }
 
-    // 查询个人加班
     public String findOneExtPageList() {
         if (!"".equals(empId)) {
             hql += " and e.employeeinfo.empId = " + empId;
@@ -95,7 +87,6 @@ public class extraworkAction extends ActionSupport {
         return "findOneExtPageList";
     }
 
-    // 查询所有加班单信息
     public String findExtPageList() {
         if (!"".equals(departId)) {
             hql += " and e.employeeinfo.departmentinfo.departId = " + departId;
