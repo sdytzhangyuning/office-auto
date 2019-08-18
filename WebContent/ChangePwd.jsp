@@ -21,25 +21,25 @@
 			<s:form theme="simple" action="userAction_updatePwd.action" onsubmit="return changepwd();">
 				<table cellSpacing=0 cellPadding=0 width=620 align=center border=0 style="margin-top: 35px;">
 					<tr bgColor="#edf2fc" height=24>
-						<td colspan="3">&nbsp;<font color="#2d5bbb" size=""><b>修改密码</b></td>
+						<td colspan="3">&nbsp;<font color="#2d5bbb" size=""><b>change</b></td>
 					</tr>
 					<tr>
-						<td style="width: 200px; color: #404040; font-size: 14px;" bgcolor="white" align="right"><FONT color=#d11b00>*</FONT>&nbsp;您的旧密码:</td>
+						<td style="width: 200px; color: #404040; font-size: 14px;" bgcolor="white" align="right"><FONT color=#d11b00>*</FONT>&nbsp;old:</td>
 						<td align="left" style="width: 205px"><s:password name="user.pwd" id="oldpwd" cssStyle="width:200px;border-color:#edf2fc" /></td>
-						<td align="left"><font color="red" size="2" style="display: none" id="oldpass">*旧密码不能为空</td>
+						<td align="left"><font color="red" size="2" style="display: none" id="oldpass">*not empty</td>
 					</tr>
 					<tr>
-						<td style="width: 200px; color: #404040; font-size: 14px;" bgcolor="white" align="right"><FONT color=#d11b00>*</FONT>&nbsp;您的新密码:</td>
+						<td style="width: 200px; color: #404040; font-size: 14px;" bgcolor="white" align="right"><FONT color=#d11b00>*</FONT>&nbsp;new:</td>
 						<td align="left" style="width: 205px"><s:password name="newpwd" id="newpwd" cssStyle="width:200px;border-color:#edf2fc" /></td>
-						<td align="left"><font color="red" size="2" style="display: none" id="newpass">*新密码不能为空</font></td>
+						<td align="left"><font color="red" size="2" style="display: none" id="newpass">*not empty</font></td>
 					</tr>
 					<tr>
-						<td style="width: 200px; color: #404040; font-size: 14px;" bgcolor="white" align="right"><FONT color=#d11b00>*</FONT>&nbsp;再次输入新密码:</td>
+						<td style="width: 200px; color: #404040; font-size: 14px;" bgcolor="white" align="right"><FONT color=#d11b00>*</FONT>&nbsp;reinter:</td>
 						<td align="left" style="width: 205px"><s:password name="renewpwd" id="renewpwd" cssStyle="width:200px;border-color:#edf2fc" /></td>
-						<td align="left"><font color="red" size="2" style="display: none" id="repass">*请再次输入新密码</td>
+						<td align="left"><font color="red" size="2" style="display: none" id="repass">*reinter </td>
 					</tr>
 					<tr bgColor="#edf2fc" height=30>
-						<td colspan="3" align="center"><s:submit value="确  认" cssStyle="width:80px;height:23px;CURSOR:hand;" /> &nbsp;&nbsp <s:reset value="重  置"
+						<td colspan="3" align="center"><s:submit value="comfirm" cssStyle="width:80px;height:23px;CURSOR:hand;" /> &nbsp;&nbsp <s:reset value="reset"
 								cssStyle="width:80px;height:23px;CURSOR:hand;" /> &nbsp;&nbsp&nbsp;&nbsp</td>
 					</tr>
 				</table>

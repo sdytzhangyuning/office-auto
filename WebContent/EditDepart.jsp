@@ -11,26 +11,26 @@
 	<div id="contain">
 		<s:form onsubmit="return editdepartcheck();" theme="simple" action="departAction_updateDep.action" method="post">
 			<table>
-				<caption>部门详细信息</caption>
+				<caption>dep info</caption>
 				<tr>
-					<td class="tdtitle">部门编号</td>
+					<td class="tdtitle">dep no</td>
 					<td class="tddata"><s:property value="depart.departId" /></td>
-					<td class="tdtitle">部门名称</td>
+					<td class="tdtitle">dep name</td>
 					<td><s:textfield name="depart.departName" id="departName" value="%{depart.departName }" /></td>
 				</tr>
 				<tr>
-					<td class="tdtitle">在职人数</td>
+					<td class="tdtitle">count</td>
 					<td class="tddata"><s:textfield name="depart.departNum" id="departName" value="%{depart.departNum }" /></td>
 					<td class="tdtitle"></td>
 					<td class="tddata"></td>
 				</tr>
 			</table>
 			<fieldset>
-				<legend>部门描述</legend>
+				<legend>desc</legend>
 				<s:textarea name="depart.departDesc" value="%{depart.departDesc}" cols="80" rows="19" id="departDescrip"></s:textarea>
 			</fieldset>
 			<br>
-			<s:submit value="保存修改" />
+			<s:submit value="save" />
 		</s:form>
 	</div>
 	<s:if test="(read==false)">

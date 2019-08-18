@@ -18,7 +18,7 @@
 			var page=document.getElementById("aimpage").value;
 			if(page>total)
 			{
-				alert("超过最大页数");
+				alert("over max");
 				
 				return false;
 			}
@@ -42,10 +42,10 @@
 			<s:form action="holsAction_adminHols.action" theme="simple">
 				<table style="font-size: 14px; color: #404040;">
 					<tr>
-						<td>请选择部门:<s:select name="departId" label="%{getText(\"impleeyList.xuanbumen\")}" labelposition="left" list="departList" listKey="key"
+						<td>choose dep:<s:select name="departId" label="%{getText(\"impleeyList.xuanbumen\")}" labelposition="left" list="departList" listKey="key"
 								emptyOption="true" listValue="value" onchange="this.form.submit();" cssStyle="label-size:14px;" />
 						</td>
-						<td>状态:<s:select name="holsState" label="%{getText(\"impleeyList.xuanbumen\")}" labelposition="left" list="stateList" listKey="key"
+						<td>status:<s:select name="holsState" label="%{getText(\"impleeyList.xuanbumen\")}" labelposition="left" list="stateList" listKey="key"
 								emptyOption="true" listValue="value" onchange="this.form.submit();" cssStyle="label-size:14px;" />
 						</td>
 					</tr>
@@ -56,17 +56,17 @@
 
 			<table border="1" bgcolor="#e2e2e2" cellspacing="1" align="center" width="100%">
 				<caption>
-					<h4>薪资列表</h4>
+					<h4>salary list</h4>
 				</caption>
 				<tr class="headerClass">
-					<th>职工编号</th>
-					<th>姓名</th>
-					<th>部门</th>
-					<th>申请时间</th>
-					<th>起始时间</th>
-					<th>终止时间</th>
-					<th>原因</th>
-					<th>状态</th>
+					<th>no</th>
+					<th>name</th>
+					<th>dep</th>
+					<th>apply date</th>
+					<th>start date</th>
+					<th>end date</th>
+					<th>reason</th>
+					<th>status</th>
 					<th>^_^</th>
 				</tr>
 				<s:iterator id="applyList" value="holss" status="h">
@@ -83,12 +83,12 @@
 						<td><s:property value="startTime" /></td>
 						<td><s:property value="endTime" /></td>
 						<td><s:property value="executes" /></td>
-						<td><s:property value="holsState==0?'未处理':''" /> <s:property value="holsState==1?'同意':''" /> <s:property value="holsState==2?'撤消':''" />
-							<s:property value="holsState==3?'拒绝':''" /></td>
+						<td><s:property value="holsState==0?'no':''" /> <s:property value="holsState==1?'approval':''" /> <s:property value="holsState==2?'recall':''" />
+							<s:property value="holsState==3?'refuse':''" /></td>
 
-						<td><a href="holsAction_updateHols.action?holsId=<s:property value="holsId"/>&holsState=1"><s:property value="holsState==0?'同意':''" /></a>
+						<td><a href="holsAction_updateHols.action?holsId=<s:property value="holsId"/>&holsState=1"><s:property value="holsState==0?'agree':''" /></a>
 							<s:property value="holsState==0?'/':''" /> <a href="holsAction_updateHols.action?holsId=<s:property value="holsId"/>&holsState=3"><s:property
-									value="holsState==0?'拒绝':''" /></a> <s:property value="holsState!=0?'---':''" /></td>
+									value="holsState==0?'refuse':''" /></a> <s:property value="holsState!=0?'---':''" /></td>
 
 					</tr>
 				</s:iterator>

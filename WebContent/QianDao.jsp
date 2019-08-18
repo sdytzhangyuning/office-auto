@@ -19,7 +19,7 @@
 			var page=document.getElementById("tiaoye").value;
 			if(page>total)
 			{
-				alert("超过最大页数");
+				alert("surpass");
 				
 				return false;
 			}
@@ -42,20 +42,20 @@
 
 			<div>
 				<s:form action="attendanceAction_addAtd.action" theme="simple">
-					<span style="font-size: 14px; color: #404040">请输入职工号：</span>
+					<span style="font-size: 14px; color: #404040">print no：</span>
 					<s:textfield name="attendance.employeeinfo.empId" cssStyle="height:20px;" />
-					<s:submit value="签到" cssClass="tiaozhuan" />
+					<s:submit value="sign in" cssClass="tiaozhuan" />
 				</s:form>
 				<table border="1" bgcolor="#e2e2e2" cellspacing="1" align="center" width="770px">
 					<caption>
-						<h4>职工签到表</h4>
+						<h4>check in list</h4>
 					</caption>
 					<tr class="headerClass">
-						<th>职工编号</th>
-						<th>职工姓名</th>
-						<th>所属部门</th>
-						<th>日期</th>
-						<th>状态</th>
+						<th>no</th>
+						<th>name</th>
+						<th>dep</th>
+						<th>date</th>
+						<th>status</th>
 						<th>^_^</th>
 					</tr>
 					<s:iterator id="qianDaoList" value="attendances" status="a">
@@ -68,8 +68,8 @@
 							<td><s:property value="employeeinfo.empName" /></td>
 							<td><s:property value="employeeinfo.departmentinfo.departName" /></td>
 							<td><s:property value="attendTime" /></td>
-							<td><s:property value="attendState==0?'缺勤':(attendState==1?'在职':'请假')" /></td>
-							<td><a href="attendanceAction_updateAtd.action?atdId=<s:property value="attendId"/>"><s:property value="attendState==0?'签到':''" /></a> <s:property
+							<td><s:property value="attendState==0?'absence':(attendState==1?'on':'leave')" /></td>
+							<td><a href="attendanceAction_updateAtd.action?atdId=<s:property value="attendId"/>"><s:property value="attendState==0?'sign in':''" /></a> <s:property
 									value="attendState!=0?'---':''" /></td>
 						</tr>
 					</s:iterator>
@@ -79,16 +79,16 @@
 				<div>
 					<s:form theme="simple" action="attendanceAction_addAtdUI.action" onsubmit="return checkmax1()">
 						<table width="770px">
-							<td style="width: 400px; font-size: 14px; color: #404040">共<s:property value="PageCount" />页 <s:property value="totalMessage" />条记录
+							<td style="width: 400px; font-size: 14px; color: #404040">count<s:property value="PageCount" />page <s:property value="totalMessage" />info
 							</td>
 							<td style="width: 400px; font-size: 14px;"><s:if test="index>1">
-									<a href="attendanceAction_addAtdUI.action?index=<s:property value="index-1"/>">上一页</a>
+									<a href="attendanceAction_addAtdUI.action?index=<s:property value="index-1"/>">last</a>
 								</s:if></td>
 							<td style="width: 400px; font-size: 14px;"><s:if test="index<PageCount">
-									<a href="attendanceAction_addAtdUI.action?index=<s:property value="index+1"/>">下一页</a>
+									<a href="attendanceAction_addAtdUI.action?index=<s:property value="index+1"/>">next</a>
 								</s:if></td>
-							<td style="width: 400px; font-size: 14px; color: #404040">跳转到第<s:textfield id="tiaoye" name="index" cssStyle="width:20px;height:20px;"
-									onmouseover="this.select();" />页 <s:submit value="跳转" cssClass="tiaozhuan" />
+							<td style="width: 400px; font-size: 14px; color: #404040">go to<s:textfield id="tiaoye" name="index" cssStyle="width:20px;height:20px;"
+									onmouseover="this.select();" />page <s:submit value="go" cssClass="tiaozhuan" />
 							</td>
 						</table>
 					</s:form>

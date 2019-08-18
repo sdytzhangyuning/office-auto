@@ -17,7 +17,7 @@
 			var page=document.getElementById("aimpage").value;
 			if(page>total)
 			{
-				alert("超过最大页数");
+				alert("over max");
 				
 				return false;
 			}
@@ -39,18 +39,18 @@
 		</div>
 		<div id="maincontent">
 			<table border="1" bgcolor="#e2e2e2" cellspacing="1" align="center" width="100%">
-				<caption><h4>薪资列表</h4></caption>
+				<caption><h4>salary list</h4></caption>
 				<tr class="headerClass">
-					<th>职工编号</th>
-					<th>部门姓名</th>
-					<th>年</th>
-					<th>月</th>
-					<th>基本薪资</th>
-					<th>加班费</th>
-					<th>请假费</th>
-					<th>缺勤费</th>
-					<th>总计</th>
-					<th>状态</th>
+					<th>no</th>
+					<th>dep</th>
+					<th>year</th>
+					<th>month</th>
+					<th>base salary</th>
+					<th>over time</th>
+					<th>leave</th>
+					<th>absence</th>
+					<th>count</th>
+					<th>status</th>
 				</tr>
 				<s:iterator id="salaryList" value="salarys" status="s">
 					<tr id="s<s:property value="#s.index"/>"
@@ -72,7 +72,7 @@
 						<td><s:property value="sabsence"/></td>
 						
 						<td><s:property value="stotal"/></td>
-						<td><s:property value="sstate==0?'未发放':'已发放'"/></td>
+						<td><s:property value="sstate==0?'did not give out':'gave out'"/></td>
 						
 					</tr>
 				</s:iterator>

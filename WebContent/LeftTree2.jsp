@@ -8,12 +8,12 @@
 	<body>
 		<div id="leftTree">
 			<ul>	
-				<li><a href="empAction_empDet.action?empId=${emp.empId }">个人基本信息</a></li>
-				<li><a href="PKaoQinSearch.jsp">考勤记录查询</a></li>			
-				<li><a href="salaryAction_findSalList.action">个人工资列表</a></li>	
-				<li><a href="holsAction_addHolsUI.action">假期申请</a></li>
-				<li><a href="holsAction_findHolsPageList.action">假期申请查询</a></li>
-				<li><a href="ChangePwd.jsp">修改密码</a></li>
+				<li><a href="empAction_empDet.action?empId=${emp.empId }">info</a></li>
+				<li><a href="PKaoQinSearch.jsp">query</a></li>			
+				<li><a href="salaryAction_findSalList.action">salary list</a></li>	
+				<li><a href="holsAction_addHolsUI.action">apply for leave</a></li>
+				<li><a href="holsAction_findHolsPageList.action">vacation query</a></li>
+				<li><a href="ChangePwd.jsp">change password</a></li>
 			</ul>
 		</div>
 	</body>

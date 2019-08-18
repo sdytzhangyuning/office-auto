@@ -21,9 +21,9 @@
 		</div>
 		<div id="maincontent">
 			<s:form theme="simple" method="post" action="salaryAction_salUI.action">
-				<span class="choseinfo">请选择月份：</span>
+				<span class="choseinfo">choose month：</span>
 				<sx:datetimepicker name="salaryMonth" toggleType="explode" value="today" displayFormat="yyyy-MM" />
-				<s:submit value="生成工资表" cssClass="shengcheng" />
+				<s:submit value="generate" cssClass="shengcheng" />
 				<font color="red"><s:property value="result" /></font>
 				<s:fielderror cssClass="fielderr" />
 			</s:form>

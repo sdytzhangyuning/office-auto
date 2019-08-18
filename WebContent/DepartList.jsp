@@ -19,7 +19,7 @@
 				var page=document.getElementById("tiaoye").value;
 				if(page>total)
 				{
-					alert("超过最大页数");
+					alert("over max");
 					
 					return false;
 				}
@@ -43,13 +43,13 @@
 
 			<table border="1" bgcolor="#e2e2e2" cellspacing="1" align="center" width="500px">
 				<caption>
-					<h4>部门列表</h4>
+					<h4>dep list</h4>
 				</caption>
 				<tr class="headerClass">
-					<th>部门编号</th>
-					<th>部门姓名</th>
-					<th>职工人数</th>
-					<th>部门描述</th>
+					<th>dep no</th>
+					<th>dep name</th>
+					<th>dep count</th>
+					<th>desc</th>
 					<th>^_^</th>
 					<th>^_^</th>
 				</tr>
@@ -61,11 +61,11 @@
 						<s:else>'evenRow'</s:else>);">
 						<td><s:property value="departId" /></td>
 						<td><s:property value="departName" /></td>
-						<td><a href="empAction_searchEmpList.action?departId=<s:property value="departId"/>" target="_blank" title="点击查看详细职工信息"><s:property
+						<td><a href="empAction_searchEmpList.action?departId=<s:property value="departId"/>" target="_blank" title="click to search"><s:property
 									value="departNum" /></a></td>
 						<td><s:property value="departDesc" /></td>
-						<td><a href="departAction_dellDep.action?depId=<s:property value="departId"/>">删除</a></td>
-						<td><a href="departAction_updateDepUI.action?depId=<s:property value="departId"/>" target="_blank">编辑</a></td>
+						<td><a href="departAction_dellDep.action?depId=<s:property value="departId"/>">del</a></td>
+						<td><a href="departAction_updateDepUI.action?depId=<s:property value="departId"/>" target="_blank">edit</a></td>
 					</tr>
 				</s:iterator>
 			</table>

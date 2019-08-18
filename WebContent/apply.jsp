@@ -24,16 +24,16 @@
 			<s:form theme="simple" action="holsAction_addHols.action">
 				<table align="center" style="color: #404040; font-size: 14px;">
 					<tr>
-						<td>起始时间:<sx:datetimepicker name="hols.startTime" toggleType="explode" value="" displayFormat="yyyy-MM-dd" />
+						<td>start time:<sx:datetimepicker name="hols.startTime" toggleType="explode" value="" displayFormat="yyyy-MM-dd" />
 						</td>
-						<td>终止时间:<sx:datetimepicker name="hols.endTime" toggleType="explode" value="" displayFormat="yyyy-MM-dd" /> <s:submit value="确定" />
+						<td>end time:<sx:datetimepicker name="hols.endTime" toggleType="explode" value="" displayFormat="yyyy-MM-dd" /> <s:submit value="confirm" />
 						</td>
 
 					</tr>
 					<tr>
 						<td colspan="2">
 							<fieldset>
-								<legend>请假原因</legend>
+								<legend>reason</legend>
 								<s:textarea cols="85" rows="15" name="hols.executes">
 								</s:textarea>
 							</fieldset>

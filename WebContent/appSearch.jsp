@@ -17,7 +17,7 @@
 			var page=document.getElementById("aimpage").value;
 			if(page>total)
 			{
-				alert("超过最大页数");
+				alert("error");
 				
 				return false;
 			}
@@ -39,16 +39,16 @@
 		</div>
 		<div id="maincontent">
 			<table border="1" bgcolor="#e2e2e2" cellspacing="1" align="center" width="100%">
-				<caption><h4>请假情况列表</h4></caption>
+				<caption><h4>leave</h4></caption>
 				<tr class="headerClass">
-					<th>职工编号</th>
-					<th>姓名</th>
-					<th>部门</th>
-					<th>申请时间</th>
-					<th>起始时间</th>
-					<th>终止时间</th>
-					<th>原因</th>
-					<th>状态</th>
+					<th>emp no</th>
+					<th>name</th>
+					<th>dep</th>
+					<th>apply time</th>
+					<th>start time</th>
+					<th>end time</th>
+					<th>reason</th>
+					<th>status</th>
 					<th>^_^</th>
 				</tr>
 				<s:iterator id="applyList" value="holss" status="h">
@@ -69,10 +69,10 @@
 						<td><s:property value="endTime"/></td>
 						<td><s:property value="executes"/></td>
 						<td>
-							<s:property value="holsState==0?'未处理':''"/>
-							<s:property value="holsState==1?'同意':''"/>
-							<s:property value="holsState==2?'撤消':''"/>
-							<s:property value="holsState==3?'拒绝':''"/>
+							<s:property value="holsState==0?'no':''"/>
+							<s:property value="holsState==1?'agree':''"/>
+							<s:property value="holsState==2?'recall':''"/>
+							<s:property value="holsState==3?'refuse':''"/>
 						</td>
 						
 						<td>

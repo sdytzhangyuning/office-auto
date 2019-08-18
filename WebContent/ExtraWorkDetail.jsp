@@ -10,22 +10,22 @@
 		<div id="contain">
 		<s:form theme="simple">
 		<table>
-			<caption>加班详细信息</caption>
+			<caption>more info</caption>
 			<tr>
-				<td class="tdtitle">职工编号</td>
+				<td class="tdtitle">no</td>
 				<td class="tddata"><s:property value="extrawork.employeeinfo.empId"/></td>
-				<td class="tdtitle">职工姓名</td>
+				<td class="tdtitle">name</td>
 				<td class="tddata"><s:property value="extrawork.employeeinfo.empName"/></td>
 			</tr>
 			<tr>
-				<td class="tdtitle">所属部门</td>
+				<td class="tdtitle">dep</td>
 				<td class="tddata"><s:property value="extrawork.employeeinfo.departmentinfo.departName"/></td>
-				<td  class="tdtitle">加班日期</td>
+				<td  class="tdtitle">date</td>
 				<td class="tddata"><s:property value="extrawork.workTime"/></td>
 			</tr>
 		</table>
 		<fieldset>
-			<legend>加班原因</legend>
+			<legend>reason</legend>
 			<s:property value="extrawork.executes"/>
 		</fieldset><br>
 		</s:form>

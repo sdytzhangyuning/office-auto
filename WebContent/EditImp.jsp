@@ -19,59 +19,59 @@
 	<div style="width:550px;background:white;margin-top:30px;">
 		<s:form theme="simple" onsubmit="return editimpcheck();" action="editImp" method="post" enctype="multipart/form-data">
 		<fieldset>
-			<legend>编辑员工信息</legend>
+			<legend>edit info</legend>
 			
 			<table width="500">
 				<tr>
-					<td style="width:80px;">职工编号:</td>
+					<td style="width:80px;">no:</td>
 					<td><s:property value="impId"/><s:textfield name="impId" cssStyle="display:none"/></td>
 				</tr>
 				<tr>
-					<td>职工姓名:</td>
+					<td>name:</td>
 					<td><s:textfield name="impName" cssClass="inputarea"/><span id="impNameerr" class="fielderr"></span></td>
 				</tr>
 				<tr>
-					<td>职工性别:</td>
+					<td>gender:</td>
 					<td><s:radio name="impGender" list="genderList" listKey="key" listValue="value"/></td>
 				</tr>
 				<tr>
-					<td>出生日期:</td>
-					<td><s:datetimepicker name="impBirth" label="购买日期" toggleType="explode" cssClass="timepick"/></td>
+					<td>date of birth:</td>
+					<td><s:datetimepicker name="impBirth" label="date of buy" toggleType="explode" cssClass="timepick"/></td>
 				</tr>
 				<tr>
-					<td>个人邮箱:</td>
+					<td>email:</td>
 					<td><s:textfield name="impEmail" cssClass="inputarea"/><span id="impEmailerr" class="fielderr"></span></td>
 				</tr>
 				<tr>
-					<td>个人电话:</td>
+					<td>phone:</td>
 					<td><s:textfield name="impTel" cssClass="inputarea"/><span id="impTelerr" class="fielderr"></span></td>
 				</tr>
 				<tr>
-					<td>所属部门:</td>
+					<td>dep:</td>
 					<td>
 						<s:select name="departId" list="departList" listKey="key" listValue="value"/>
 					</td>
 				</tr>
 				<tr>
-					<td>职 位:</td>
+					<td>work:</td>
 					<td><s:textfield name="impRoll" cssClass="inputarea"/><span id="impRollerr" class="fielderr"></span></td>
 				</tr>
 				<tr>
-					<td>薪 资:</td>
+					<td>salary:</td>
 					<td><s:textfield name="impSalary"/><span id="impSalaryerr" class="fielderr"></span></td>
 				</tr>
 				<tr>
-					<td>更改头像:</td>
+					<td>change photo:</td>
 					<td><input type="file" name="pic" class="infile"/></td>
 				</tr>
 			</table>
 			</fieldset>
 			<fieldset>
-			<legend>个人简历</legend>
+			<legend>resume</legend>
 			<span id="impBioerr" class="fielderr"></span>
 			<p><s:textarea cols="75" rows="15" name="impBio"></s:textarea></p>
 			</fieldset>
-			<s:submit value="提 交" cssClass="tijiao"/>
+			<s:submit value="submit" cssClass="tijiao"/>
 		</s:form>
 		<script language="JavaScript">
 					result="<s:property value="result"/>";

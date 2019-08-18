@@ -8,7 +8,6 @@
 	<constant name="struts.devMode" value="true" />
 
 	<package name="login" namespace="/" extends="struts-default">
-		<!-- 登陆action -->
 		<action name="LoginAction_*" class="LoginAction" method="{1}">
 			<result name="manage" type="redirect">empAction_findEmpPageList.action</result>
 			<result name="personal" type="redirect">empAction_empDet.action</result>
@@ -31,7 +30,6 @@
 			<result name="loginError">/Login.jsp</result>
 		</global-results>
 
-		<!-- 部门action -->
 		<action name="departAction_*" class="departAction" method="{1}">
 			<result name="addDepUI">/</result>
 			<result name="addDepOk" type="redirect">departAction_findDepPageList.action</result>
@@ -42,7 +40,6 @@
 			<result name="Error">/</result>
 		</action>
 
-		<!-- 员工action -->
 		<action name="empAction_*" class="empAction" method="{1}">
 			<result name="addEmpUI">/AddEmp.jsp</result>
 			<result name="empDetail">/EmpDetail.jsp</result>
@@ -57,7 +54,6 @@
 			<result name="Error">/</result>
 		</action>
 
-		<!-- 加班action -->
 		<action name="extraworkAction_*" class="extraworkAction" method="{1}">
 			<result name="addExtUI" type="redirect">/</result>
 			<result name="extDetail">/ExtraWorkDetail.jsp</result>
@@ -70,7 +66,6 @@
 			<result name="Error">/</result>
 		</action>
 
-		<!-- 工资action -->
 		<action name="salaryAction_*" class="salaryAction" method="{1}">
 			<result name="addSalUI">/</result>
 			<result name="addSalOk">/</result>
@@ -85,7 +80,6 @@
 			<result name="Error">/</result>
 		</action>
 
-		<!-- 请假条action -->
 		<action name="holsAction_*" class="holsAction" method="{1}">
 			<result name="addHolsUI">/apply.jsp</result>
 			<result name="addHolsOk" type="redirect">holsAction_findHolsPageList.action</result>
@@ -97,7 +91,6 @@
 			<result name="Error">/</result>
 		</action>
 
-		<!-- 用户action -->
 		<action name="userAction_*" class="userAction" method="{1}">
 			<result name="addUserUI">/</result>
 			<result name="addUserOk">/</result>
@@ -110,7 +103,6 @@
 			<result name="Error">/</result>
 		</action>
 
-		<!-- 考勤action -->
 		<action name="attendanceAction_*" class="attendanceAction" method="{1}">
 			<result name="addAtdUI">/QianDao.jsp</result>
 			<result name="addAtdOk" type="redirect">attendanceAction_addAtdUI.action</result>
@@ -129,6 +121,5 @@
 		</action>
 
 	</package>
-	<!-- Add packages here -->
 
 </struts>

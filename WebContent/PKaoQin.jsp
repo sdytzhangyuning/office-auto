@@ -20,7 +20,7 @@
 			var page=document.getElementById("aimpage").value;
 			if(page>total)
 			{
-				alert("超过最大页数");
+				alert("over max");
 				
 				return false;
 			}
@@ -47,13 +47,13 @@
 				<s:form theme="simple" action="attendanceAction_getByTimePageList.action">
 					<table width="100%" style="font-size: 14px; color: #404040;">
 						<tr>
-							<td>选择状态: <s:select name="attendState" label="请选择状态：" labelposition="left" list="stateList" listKey="key" listValue="value" />
+							<td>choose status: <s:select name="attendState" label="select status：" labelposition="left" list="stateList" listKey="key" listValue="value" />
 							</td>
-							<td>起始时间:<sx:datetimepicker name="from_day" toggleType="explode" displayFormat="yyyy-MM-dd" />
+							<td>start date:<sx:datetimepicker name="from_day" toggleType="explode" displayFormat="yyyy-MM-dd" />
 							</td>
-							<td>终止时间:<sx:datetimepicker name="to_day" toggleType="explode" displayFormat="yyyy-MM-dd" />
+							<td>end date:<sx:datetimepicker name="to_day" toggleType="explode" displayFormat="yyyy-MM-dd" />
 							</td>
-							<td><s:submit value="确定" /></td>
+							<td><s:submit value="confirm" /></td>
 						</tr>
 					</table>
 
@@ -62,14 +62,14 @@
 				<s:if test="attendances.size()>0">
 					<table border="1" bgcolor="#e2e2e2" cellspacing="1" align="center" width="770px">
 						<caption>
-							<h4>考勤表</h4>
+							<h4>check</h4>
 						</caption>
 						<tr class="headerClass">
-							<th>职工编号</th>
-							<th>职工姓名</th>
-							<th>所属部门</th>
-							<th>日期</th>
-							<th>状态</th>
+							<th>no</th>
+							<th>name</th>
+							<th>dep</th>
+							<th>date</th>
+							<th>status</th>
 
 						</tr>
 						<s:iterator id="recordList" value="attendances" status="atd">
@@ -82,32 +82,32 @@
 								<td><s:property value="employeeinfo.empName" /></td>
 								<td><s:property value="employeeinfo.departmentinfo.departName" /></td>
 								<td><s:property value="attendTime" /></td>
-								<td><s:property value="attendState==0?'缺勤':(attendState==1?'在职':'')" /> <a
+								<td><s:property value="attendState==0?'absence':(attendState==1?'on':'')" /> <a
 									href="qingJiaDetail.action?empId=<s:property value="empId"/>&date=<s:property value="date"/>" target="_blank"><s:property
-											value="attendState==2?'请假':''" /></a></td>
+											value="attendState==2?'leave':''" /></a></td>
 							</tr>
 						</s:iterator>
 					</table>
 					<div>
 						<s:form theme="simple" action="attendanceAction_getByTimePageList.action" onsubmit="return checkmax1();">
 							<table width="770px">
-								<td style="width: 400px; font-size: 14px; color: #404040">共<s:property value="PageCount" />页 <s:property value="totalMessage" />条记录
+								<td style="width: 400px; font-size: 14px; color: #404040">count<s:property value="PageCount" />page <s:property value="totalMessage" />info
 								</td>
 								<td style="width: 400px; font-size: 14px;"><s:if test="index>1">
-										<a href="attendanceAction_getByTimePageList?index=<s:property value="index-1"/>">上一页</a>
+										<a href="attendanceAction_getByTimePageList?index=<s:property value="index-1"/>">last</a>
 									</s:if></td>
 								<td style="width: 400px; font-size: 14px;"><s:if test="index<PageCount">
-										<a href="attendanceAction_getByTimePageList.action?index=<s:property value="index+1"/>">下一页</a>
+										<a href="attendanceAction_getByTimePageList.action?index=<s:property value="index+1"/>">next</a>
 									</s:if></td>
-								<td style="width: 400px; font-size: 14px; color: #404040">跳转到第<s:textfield id="aimpage" name="index" cssStyle="width:20px;height:20px;"
-										onmouseover="this.select();" />页 <s:submit value="跳转" cssClass="tiaozhuan" />
+								<td style="width: 400px; font-size: 14px; color: #404040">to<s:textfield id="aimpage" name="index" cssStyle="width:20px;height:20px;"
+										onmouseover="this.select();" />page <s:submit value="to" cssClass="tiaozhuan" />
 								</td>
 							</table>
 						</s:form>
 					</div>
 				</s:if>
 				<s:else>
-					<span style="font-size: 25; color: red;">暂没有相关的考勤信息</span>
+					<span style="font-size: 25; color: red;">none</span>
 				</s:else>
 				<s:fielderror cssClass="fielderr" />
 			</div>

@@ -29,8 +29,8 @@
 			<s:form theme="simple" action="attendanceAction_getByTimePageList.action">
 				<table>
 					<tr>
-						<td>请选择时间段<sx:datetimepicker name="from_day" toggleType="explode" value="today" displayFormat="yyyy-MM-dd" /></td>
-						<td>至<sx:datetimepicker name="to_day" toggleType="explode" value="today"  displayFormat="yyyy-MM-dd"/> <s:submit value="确定" /></td>
+						<td>choose date<sx:datetimepicker name="from_day" toggleType="explode" value="today" displayFormat="yyyy-MM-dd" /></td>
+						<td>to<sx:datetimepicker name="to_day" toggleType="explode" value="today"  displayFormat="yyyy-MM-dd"/> <s:submit value="submit" /></td>
 					</tr>
 				</table>
 			</s:form>

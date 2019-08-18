@@ -21,60 +21,60 @@
 	<div style="width: 550px; background: white; margin-top: 30px;">
 		<s:form theme="simple" onsubmit="return editimpcheck();" action="empAction_updateEmp.action" method="post" enctype="multipart/form-data">
 			<fieldset>
-				<legend>编辑员工信息</legend>
+				<legend>edit info</legend>
 
 				<table width="500">
 					<tr>
-						<td style="width: 80px;">职工编号:</td>
+						<td style="width: 80px;">no:</td>
 						<td><s:property value="emp.empId" />
 							<s:textfield name="emp.empId" cssStyle="display:none" /></td>
 					</tr>
 					<tr>
-						<td>职工姓名:</td>
+						<td>name:</td>
 						<td><s:textfield name="emp.empName" cssClass="inputarea" value="%{emp.empName}" /><span id="impNameerr" class="fielderr"></span></td>
 					</tr>
 					<tr>
-						<td>职工性别:</td>
+						<td>gender:</td>
 						<td><s:radio name="emp.empSex" list="genderList" listKey="key" listValue="value" /></td>
 					</tr>
 					<tr>
-						<td>出生日期:</td>
+						<td>date of birth:</td>
 						<td><sx:datetimepicker name="emp.empBirth" toggleType="explode" cssClass="timepick" displayFormat="yyyy-MM-dd" value="%{emp.empBirth}" /></td>
 					</tr>
 					<tr>
-						<td>个人邮箱:</td>
+						<td>email:</td>
 						<td><s:textfield name="emp.empEmail" cssClass="inputarea" value="%{emp.empEmail}" /><span id="impEmailerr" class="fielderr"></span></td>
 					</tr>
 					<tr>
-						<td>个人电话:</td>
+						<td>phone:</td>
 						<td><s:textfield name="emp.empTel" cssClass="inputarea" value="%{emp.empTel}" /><span id="impTelerr" class="fielderr"></span></td>
 					</tr>
 					<tr>
-						<td>所属部门:</td>
+						<td>dep:</td>
 						<td><s:select name="emp.departmentinfo.departId" list="departList" listKey="key" listValue="value" /></td>
 					</tr>
 					<tr>
-						<td>职 位:</td>
+						<td>work:</td>
 						<td><s:textfield name="emp.empRoll" cssClass="inputarea" value="%{emp.empRoll}" /><span id="impRollerr" class="fielderr"></span></td>
 					</tr>
 					<tr>
-						<td>薪 资:</td>
+						<td>salary:</td>
 						<td><s:textfield name="emp.empSalary" value="%{emp.empSalary}" /><span id="impSalaryerr" class="fielderr"></span></td>
 					</tr>
 					<tr>
-						<td>更改头像:</td>
+						<td>photo:</td>
 						<td><input type="file" name="upload" class="infile" /></td>
 					</tr>
 				</table>
 			</fieldset>
 			<fieldset>
-				<legend>个人简历</legend>
+				<legend>resume</legend>
 				<span id="impBioerr" class="fielderr"></span>
 				<p>
 					<s:textarea cols="75" rows="15" name="emp.empBio" value="%{emp.empBio}"></s:textarea>
 				</p>
 			</fieldset>
-			<s:submit value="提 交" cssClass="tijiao" />
+			<s:submit value="submit" cssClass="tijiao" />
 		</s:form>
 		<script type="text/javascript">
 			result = "<s:property value="result"/>";

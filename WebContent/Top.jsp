@@ -15,7 +15,7 @@
 				<h1><i><s:text name="top.title"/></i></h1>
 			</div>
 			<div id="simpleinfo">
-				<p><span><s:text name="top.info"/></span><span id="time"></span><a href="LoginAction_logout.action">退出登录</a></p>
+				<p><span><s:text name="top.info"/></span><span id="time"></span><a href="LoginAction_logout.action">sign out</a></p>
 			</div>
 		</div>
 	</body>

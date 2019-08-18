@@ -24,24 +24,24 @@
 				<s:form theme="simple" method="post" action="extraworkAction_addExt.action">
 					<table>
 						<caption>
-							<h4>添加加班信息</h4>
+							<h4>add more hours</h4>
 						</caption>
 						<tr>
-							<td>职工编号:</td>
+							<td>emp no:</td>
 							<td><s:textfield name="extrawork.employeeinfo.empId" /></td>
-							<td>加班日期:</td>
+							<td>work time:</td>
 							<td><sx:datetimepicker name="extrawork.workTime" toggleType="explode" value="today"  displayFormat="yyyy-MM-dd"/></td>
 						</tr>
 						<tr>
 							<td colspan="4">
 								<fieldset>
-									<legend>加班原因:</legend>
+									<legend>reason:</legend>
 									<s:textarea cols="70" rows="10" name="extrawork.executes"></s:textarea>
 								</fieldset>
 							</td>
 						</tr>
 					</table>
-					<s:submit value="提交" cssClass="tijiao" />
+					<s:submit value="submit" cssClass="tijiao" />
 				</s:form>
 				<s:fielderror cssClass="fielderr" />
 			</div>

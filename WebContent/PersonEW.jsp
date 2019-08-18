@@ -21,7 +21,7 @@
 				var page=document.getElementById("tiaoye").value;
 				if(page>total)
 				{
-					alert("超过最大页数");
+					alert("surpass");
 					
 					return false;
 				}
@@ -45,24 +45,24 @@
 			<s:form theme="simple" action="extraworkAction_findOneExtPageList.action">
 				<table width="700px" style="font-size: 14px; color: #404040;" align="center">
 					<tr>
-						<td>职工编号:<s:textfield name="empId" /></td>
-						<td>起始时间:<sx:datetimepicker name="startTime" toggleType="explode" value="today" displayFormat="yyyy-MM-dd" /></td>
-						<td>终止时间:<sx:datetimepicker name="endTime" toggleType="explode" value="today" displayFormat="yyyy-MM-dd" /></td>
-						<td><s:submit value="查询" /></td>
+						<td>no:<s:textfield name="empId" /></td>
+						<td>start date:<sx:datetimepicker name="startTime" toggleType="explode" value="today" displayFormat="yyyy-MM-dd" /></td>
+						<td>end date:<sx:datetimepicker name="endTime" toggleType="explode" value="today" displayFormat="yyyy-MM-dd" /></td>
+						<td><s:submit value="query" /></td>
 					</tr>
 				</table>
 			</s:form>
 			<s:if test="extraworks.size()>0">
 				<table border="1" bgcolor="#e2e2e2" cellspacing="1" align="center" width="700px">
 					<caption>
-						<h4>个人加班列表</h4>
+						<h4>overtime list</h4>
 					</caption>
 					<tr class="headerClass">
-						<th>职工编号</th>
-						<th>职工姓名</th>
-						<th>所属部门</th>
-						<th>加班日期</th>
-						<th>加班原因</th>
+						<th>no</th>
+						<th>name</th>
+						<th>dep</th>
+						<th>date</th>
+						<th>reason</th>
 						<th>^_^</th>
 						<th>^_^</th>
 					</tr>
@@ -77,8 +77,8 @@
 							<td><s:property value="employeeinfo.departmentinfo.departName" /></td>
 							<td><s:property value="workTime" /></td>
 							<td><s:property value="executes" /></td>
-							<td><a href="extraworkAction_extDetail.action?extId=<s:property value="extraId"/>" target="_blank">详情</a></td>
-							<td><a href="extraworkAction_dellExt.action?extId=<s:property value="extraId"/>">删除</a></td>
+							<td><a href="extraworkAction_extDetail.action?extId=<s:property value="extraId"/>" target="_blank">info</a></td>
+							<td><a href="extraworkAction_dellExt.action?extId=<s:property value="extraId"/>">delete</a></td>
 						</tr>
 					</s:iterator>
 				</table>
@@ -107,7 +107,7 @@
 			</s:if>
 			<s:else>
 				<p class="fielderr" style="margin-left: 40px;">
-					没有相关信息
+					none
 					<s:fielderror cssClass="fielderr" cssStyle="margin-left:40px;" />
 				</p>
 			</s:else>

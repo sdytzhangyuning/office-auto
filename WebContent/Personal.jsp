@@ -29,7 +29,7 @@
 			<div style="width: 600px; margin-left: 20px; text-align: center;">
 				<div id="infohead">
 					<s:property value="emp.empName" />
-					的详细信息
+					info
 				</div>
 				<div id="pic">
 					<div style="width: 200px; height: 175px;">
@@ -37,45 +37,45 @@
 							onload="changePic('personpic');">
 					</div>
 
-					<span><s:property value="emp.empName" />的头像</span>
+					<span><s:property value="emp.empName" />photo</span>
 				</div>
 
 				<div id="info">
 					<table>
 						<tr class="evenrow">
-							<td>职工编号：</td>
+							<td>no：</td>
 							<td><s:property value="emp.empId" /></td>
 						</tr>
 						<tr class="oddrow">
-							<td>职工姓名：</td>
+							<td>name：</td>
 							<td><s:property value="emp.empName" /></td>
 						</tr>
 						<tr class="evenrow">
-							<td>职工性别：</td>
+							<td>gender：</td>
 							<td><s:property value="emp.empSex" /></td>
 						</tr>
 						<tr class="oddrow">
-							<td>出生日期：</td>
+							<td>date of birth：</td>
 							<td><s:property value="emp.empBirth" /></td>
 						</tr>
 						<tr class="evenrow">
-							<td>个人邮箱：</td>
+							<td>email：</td>
 							<td><s:property value="emp.empEmail" /></td>
 						</tr>
 						<tr class="oddrow">
-							<td>个人电话：</td>
+							<td>phone：</td>
 							<td><s:property value="emp.empTel" /></td>
 						</tr>
 						<tr class="evenrow">
-							<td>所属部门：</td>
+							<td>dep：</td>
 							<td><s:property value="emp.departmentinfo.departName" /></td>
 						</tr>
 						<tr class="oddrow">
-							<td>职 位：</td>
+							<td>work：</td>
 							<td><s:property value="emp.empRoll" /></td>
 						</tr>
 						<tr class="evenrow">
-							<td>薪 资：</td>
+							<td>salary：</td>
 							<td><s:property value="emp.empSalary" /></td>
 						</tr>
 					</table>
@@ -83,7 +83,7 @@
 				<div style="clear: both;"></div>
 				<div id="jianli">
 					<fieldset>
-						<legend>个人简历</legend>
+						<legend>resume</legend>
 
 						<p>
 							<s:property value="emp.empBio" />

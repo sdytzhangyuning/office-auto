@@ -21,9 +21,9 @@
 		</div>
 		<div id="maincontent">
 			<s:form theme="simple" method="post" action="attendanceAction_dayAdtOpUI.action">
-				<span class="choseinfo">请选择日期：</span>
+				<span class="choseinfo">choose date：</span>
 				<sx:datetimepicker name="opDate" toggleType="explode" value="today" />
-				<s:submit value="生成签到表" cssClass="shengcheng" />
+				<s:submit value="generate check in form" cssClass="shengcheng" />
 				<s:fielderror cssClass="fielderr" />
 				<font color="red"><s:property value="result" /></font>
 

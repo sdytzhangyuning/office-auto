@@ -20,7 +20,7 @@
 			var page=document.getElementById("tiaoye").value;
 			if(page>total)
 			{
-				alert("超过最大页数");
+				alert("over max");
 				
 				return false;
 			}
@@ -58,15 +58,15 @@
 				<table border="1" bgcolor="#e2e2e2" cellspacing="1" align="center" width="770px">
 
 					<tr class="headerClass">
-						<th>编号</th>
-						<th>姓名</th>
-						<th>性别</th>
-						<th>出生日期</th>
-						<th>所属部门</th>
-						<th>职位</th>
-						<th>基本薪资</th>
-						<th>电话</th>
-						<th>详细信息</th>
+						<th>no</th>
+						<th>name</th>
+						<th>gender</th>
+						<th>date of birth</th>
+						<th>dep</th>
+						<th>work</th>
+						<th>salary</th>
+						<th>phone</th>
+						<th>info</th>
 					</tr>
 					<s:iterator id="empList" value="emps" status="e">
 						<tr id="e<s:property value="#e.index"/>" <s:if test="#e.odd">class="oddRow"</s:if> <s:else>class="evenRow"</s:else>
@@ -82,7 +82,7 @@
 							<td><s:property value="empRoll" /></td>
 							<td><s:property value="empSalary" /></td>
 							<td><s:property value="empTel" /></td>
-							<td><a href="empAction_empDetail.action?empId=<s:property value="empId"/>" target="_blank">查看</a></td>
+							<td><a href="empAction_empDetail.action?empId=<s:property value="empId"/>" target="_blank">check</a></td>
 						</tr>
 					</s:iterator>
 				</table>
@@ -113,7 +113,7 @@
 
 			</s:if>
 			<s:else>
-				<p>没有相应的职工信息</p>
+				<p>none</p>
 			</s:else>
 		</div>
 	</div>

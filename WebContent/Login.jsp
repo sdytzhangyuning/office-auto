@@ -36,21 +36,18 @@
 				</div>
 			</div>
 		</div>
-		<!-- 用来浮动显示提示信息的容器 -->
 	  <table id="myerr" width="120" border="0" class="jd" bgcolor="black" cellspacing="1" onclick="hideErr();">
 		  <tr bgcolor="white"  valign="bottom">
 		    	<td id="myerrs" align="left"></td>
 		  </tr>
 	  </table>
-	  <!-- 错误信息气球的尖角 -->
 	  <img class="jd" src="images/up.gif" id="myup" onclick="hideErr();" /> 	  
-	  <!-- 错误信息气球逐渐出现的遮挡物 -->
 	  <span id="errzd" style="z-index:2;visibility:hidden;position:absolute;left:20;top:30;font-size:1px;background-color:white"/>	
 		
 		<script type="text/javascript">
 			errMsg="<s:fielderror template="myfielderror"/>";
 	        if(errMsg!="")
-	        {//若有错误消息则调用错误信息气球显示
+	        {
 	           showErrMsg(errMsg,"submit");                   
 	        }
 			var result=document.getElementById("result").value;

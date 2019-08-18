@@ -9,28 +9,28 @@
 	<body>
 	<div id="container">
 		<table>
-			<caption>请假详细信息</caption>
+			<caption>leave info</caption>
 			<tr>
-				<td>职工编号:</td>
+				<td>no:</td>
 				<td><s:property value="holsinfo.impId"/></td>
-				<td>职工姓名:</td>
+				<td>name:</td>
 				<td><s:property value="holsinfo.impName"/></td>
 			</tr>
 			<tr>
-				<td>申请时间:</td>
+				<td>apply date:</td>
 				<td><s:property value="holsinfo.applyTime"/></td>
-				<td>天数:</td>
+				<td>number of days:</td>
 				<td><s:property value="holsinfo.holdays"/></td>
 			</tr>
 			<tr>
-				<td>开始时间:</td>
+				<td>start date:</td>
 				<td><s:property value="holsinfo.startTime"/></td>
-				<td>结束时间:</td>
+				<td>end date:</td>
 				<td><s:property value="holsinfo.endTime"/></td>
 			</tr>
 		</table>
 		<fieldset>
-			<legend>请假原因:</legend>
+			<legend>reason:</legend>
 			<p><s:property value="holsinfo.executes"/></p>
 		</fieldset>
 	</div>

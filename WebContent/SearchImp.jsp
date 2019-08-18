@@ -18,7 +18,7 @@
 			var page=document.getElementById("tiaoye").value;
 			if(page>total)
 			{
-				alert("超过最大页数");
+				alert("surpass");
 				
 				return false;
 			}
@@ -41,15 +41,15 @@
 			<s:form theme="simple" method="post" action="empAction_searchEmpList.action">
 				<table width="100%" style="color: #404040; font-size: 14px; text-align: center;">
 					<tr>
-						<td>部门:<s:select name="departId" label="" labelposition="left" list="departList" listKey="key" listValue="value" />
+						<td>dep:<s:select name="departId" label="" labelposition="left" list="departList" listKey="key" listValue="value" />
 						</td>
-						<td>职工编号:<s:textfield name="empId" cssStyle="width:70px;" />
+						<td>no:<s:textfield name="empId" cssStyle="width:70px;" />
 						</td>
-						<td>职工姓名:<s:textfield name="empName" cssStyle="width:70px;" />
+						<td>name:<s:textfield name="empName" cssStyle="width:70px;" />
 						</td>
-						<td>薪资:<s:textfield name="downSalary" cssStyle="width:60px;" />至<s:textfield name="upSalary" cssStyle="width:60px;" />
+						<td>salary:<s:textfield name="downSalary" cssStyle="width:60px;" />to<s:textfield name="upSalary" cssStyle="width:60px;" />
 						</td>
-						<td><s:submit value="确定" /></td>
+						<td><s:submit value="comfirm" /></td>
 					</tr>
 				</table>
 			</s:form>
@@ -58,15 +58,15 @@
 				<table border="1" bgcolor="#e2e2e2" cellspacing="1" align="center" width="770px">
 
 					<tr class="headerClass">
-						<th>编号</th>
-						<th>姓名</th>
-						<th>性别</th>
-						<th>出生日期</th>
-						<th>所属部门</th>
-						<th>职位</th>
-						<th>基本薪资</th>
-						<th>电话</th>
-						<th>详细信息</th>
+						<th>no</th>
+						<th>name</th>
+						<th>gender</th>
+						<th>date of birth</th>
+						<th>dep</th>
+						<th>work</th>
+						<th>salary</th>
+						<th>phone</th>
+						<th>info</th>
 						<th>^_^</th>
 					</tr>
 					<s:iterator id="impList" value="emps" status="e">
@@ -83,9 +83,9 @@
 							<td><s:property value="empRoll" /></td>
 							<td><s:property value="empSalary" /></td>
 							<td><s:property value="empTel" /></td>
-							<td><a href="empAction_empDetail.action?empId=<s:property value="empId"/>" target="_blank">查看</a></td>
-							<td><a href="empAction_updateEmpUI.action?empId=<s:property value="empId"/>" target="_blank">编辑</a>/<a
-								href="empAction_dellEmp.action?empId=<s:property value="empId"/>">删除</a></td>
+							<td><a href="empAction_empDetail.action?empId=<s:property value="empId"/>" target="_blank">check</a></td>
+							<td><a href="empAction_updateEmpUI.action?empId=<s:property value="empId"/>" target="_blank">edit</a>/<a
+								href="empAction_dellEmp.action?empId=<s:property value="empId"/>">delete</a></td>
 						</tr>
 					</s:iterator>
 				</table>
@@ -117,7 +117,7 @@
 
 			</s:if>
 			<s:else>
-				<p>没有相应的职工信息</p>
+				<p>none</p>
 			</s:else>
 
 		</div>

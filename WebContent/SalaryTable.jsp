@@ -19,7 +19,7 @@
 			var page=document.getElementById("aimpage").value;
 			if(page>total)
 			{
-				alert("超过最大页数");
+				alert("surpass");
 				
 				return false;
 			}
@@ -48,19 +48,19 @@
 			<s:if test="salarys.size()!=0">
 				<table border="1" bgcolor="#e2e2e2" cellspacing="1" align="center" width="100%">
 					<caption>
-						<h4>薪资列表</h4>
+						<h4>salary list</h4>
 					</caption>
 					<tr class="headerClass">
-						<th>职工编号</th>
-						<th>职工姓名</th>
-						<th>年</th>
-						<th>月</th>
-						<th>基本薪资</th>
-						<th>加班费</th>
-						<th>请假费</th>
-						<th>缺勤费</th>
-						<th>总计</th>
-						<th>状态</th>
+						<th>no</th>
+						<th>name</th>
+						<th>year</th>
+						<th>month</th>
+						<th>salary</th>
+						<th>over time salary</th>
+						<th>leave</th>
+						<th>absence</th>
+						<th>all</th>
+						<th>status</th>
 						<th>^_^</th>
 					</tr>
 					<s:iterator id="salaryList" value="salarys" status="s">
@@ -80,7 +80,7 @@
 							<td><s:property value="sabsence" /></td>
 
 							<td><s:property value="stotal" /></td>
-							<td><s:property value="sstate==0?'未发放':'已发放'" /></td>
+							<td><s:property value="sstate==0?'did not give out':'gave out'" /></td>
 							<td><a href="salaryAction_updateSal.action?salId=<s:property value="salaryId"/>"><s:property value="sstate==0?'发放':''" /></a> <s:property
 									value="sstate==0?'':'---'" /></td>
 						</tr>
@@ -113,7 +113,7 @@
 				</table>
 			</s:if>
 			<s:else>
-				<font color="red"><p>没有相应的薪资信息</p></font>
+				<font color="red"><p>none</p></font>
 			</s:else>
 		</div>
 	</div>

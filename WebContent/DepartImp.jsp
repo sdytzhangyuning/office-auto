@@ -21,14 +21,14 @@
 	<table border="1" bgcolor="#e2e2e2" cellspacing="1" align="center" width="770px">
 		<caption style="display:block;background:f2fdf2;color:#007b00;font-size:16px;"><h4><s:property value="departName"/></h4></caption>
 		<tr class="headerClass">
-			<th>编号</th>
-			<th>姓名</th>
-			<th>性别</th>
-			<th>出生日期</th>
-			<th>职位</th>
-			<th>基本薪资</th>
-			<th>电话</th>
-			<th>详细信息</th>
+			<th>no</th>
+			<th>name</th>
+			<th>gender</th>
+			<th>date of birth</th>
+			<th>work</th>
+			<th>salary</th>
+			<th>phone</th>
+			<th>info</th>
 		</tr>
 		<s:iterator id="impList" value="impList" status="imp">
 			<tr id="imp<s:property value="#imp.index"/>"
@@ -46,7 +46,7 @@
 				<td><s:property value="impRoll"/></td>
 				<td><s:property value="impSalary"/></td>
 				<td><s:property value="impTel"/></td>
-				<td><a href="impDetail.action?impId=<s:property value="impId"/>" target="_blank">查看</a></td>
+				<td><a href="impDetail.action?impId=<s:property value="impId"/>" target="_blank">check</a></td>
 			</tr>
 		</s:iterator>
 	</table>
@@ -84,7 +84,7 @@
 	
 </s:if>
 <s:else>
-	<p>没有相应的职工信息</p>
+	<p>none</p>
 </s:else>
 </div>
 </div>
